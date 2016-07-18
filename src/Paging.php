@@ -12,6 +12,7 @@ class Paging
     private $currentPage;
     private $totalPage;
     private $navigation;
+    private $totalRecords;
 
     public function __construct(Container $app, $limit, $navigation)
     {
@@ -34,6 +35,11 @@ class Paging
         return $this->limit;
     }
 
+    public function total()
+    {
+        return $this->totalRecords;
+    }
+
     public function process($currentPage, $totalRecords)
     {
         $limit        = $this->limit;
@@ -48,11 +54,12 @@ class Paging
         $currentPage  = min(max($currentPage, 1), $totalPage);
         $offset       = max(($currentPage - 1) * $limit, 0);
 
-        $this->offset      = $offset;
-        $this->limit       = $limit;
-        $this->currentPage = $currentPage;
-        $this->totalPage   = $totalPage;
-        $this->navigation  = $navigation;
+        $this->offset       = $offset;
+        $this->limit        = $limit;
+        $this->currentPage  = $currentPage;
+        $this->totalPage    = $totalPage;
+        $this->navigation   = $navigation;
+        $this->totalRecords = $totalRecords;
     }
 
     public function render()

@@ -24,4 +24,6 @@ $app['paging']->process(1, 100);
 $offset = $app['paging']->offset();
 $limit  = $app['paging']->limit();
 
+echo 'Total Records = '.$app['paging']->total();
+
 echo $app['paging']->render();
