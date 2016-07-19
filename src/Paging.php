@@ -64,12 +64,13 @@ class Paging
 
     public function render()
     {
-        $app         = $this->app;
-        $offset      = $this->offset;
-        $limit       = $this->limit;
-        $currentPage = $this->currentPage;
-        $totalPage   = $this->totalPage;
-        $navigation  = $this->navigation;
+        $app          = $this->app;
+        $offset       = $this->offset;
+        $limit        = $this->limit;
+        $currentPage  = $this->currentPage;
+        $totalPage    = $this->totalPage;
+        $navigation   = $this->navigation;
+        $totalRecords = $this->totalRecords;
 
         $arrow = [];
         if ($currentPage == 1) {
@@ -110,8 +111,9 @@ class Paging
         }
 
         return $app['twig']->render('paging/paging.html', [
-                                    'arrow'     => $arrow,
-                                    'navigator' => $navigator,
+                                    'arrow'        => $arrow,
+                                    'navigator'    => $navigator,
+                                    'totalRecords' => $totalRecords,
                                 ]);
     }
 }
