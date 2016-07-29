@@ -4,12 +4,14 @@ use Silex\Application;
 
 class PagingTest extends PHPUnit_Framework_TestCase
 {
-    private function init()
+    public $app;
+
+    public function setUp()
     {
         $app = new Application();
         $app['debug'] = true;
 
-        return $app;
+        $this->app = $app;
     }
 
     public function testPaging()
