@@ -1,12 +1,13 @@
 # Pagination
-Groovey Pagination Package
 
+Groovey Pagination Package
 
 ## Installation
 
     $ composer require groovey/paging
 
 ## Usage
+
 ```php
 <?php
 
