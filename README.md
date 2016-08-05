@@ -1,11 +1,16 @@
 # Pagination
 Groovey Pagination Package
 
+
+## Installation
+
+    $ composer require groovey/paging
+
 ## Usage
 ```php
 <?php
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
 
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
