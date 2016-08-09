@@ -30,6 +30,8 @@ $app->register(new PagingServiceProvider(), [
     ]);
 
 $app['paging']->limit(10);
+$app['paging']->navigation(7);
+
 $app['paging']->process(1, 100);
 
 $offset = $app['paging']->offset();

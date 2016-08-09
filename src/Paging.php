@@ -35,6 +35,15 @@ class Paging
         return $this->limit;
     }
 
+    public function navigation($value = '')
+    {
+        if ($value) {
+            return $this->navigation = $value;
+        }
+
+        return $this->navigation;
+    }
+
     public function total()
     {
         return $this->totalRecords;
